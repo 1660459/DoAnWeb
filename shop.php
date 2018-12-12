@@ -66,8 +66,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<i class="fas fa-search"></i>
 										</button>
 										<div class="clearfix"> </div>
-									</form>
-							</div>
+								</form>
+						</div>
 							<!-- price range -->
 							<div class="range">
 								<h3 class="agileits-sear-head">Price range</h3>
@@ -85,8 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="left-side">
 								<h3 class="agileits-sear-head">Product Type</h3>
 								<ul>
-									<li>
-										
+									<li>										
 										<input type="checkbox" class="checked">
 										<span class="span">RayBank</span>
 									</li>
@@ -274,7 +273,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<img src="<?php echo $value['hinh_anh'] ?>" class="img-responsie" alt="" width="200" height="150">
 													<div class="men-cart-pro">
 														<div class="inner-men-cart-pro">
-															<a href="single.html" class="link-product-add-cart">Quick View</a>
+															<a href="single.php" class="link-product-add-cart">Quick View</a>
 														</div>
 													</div>
 													<span class="product-new-top">New</span>
@@ -285,7 +284,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 														<div class="grid_meta">
 															<div class="product_price">
 																<h4>
-																	<a href="single.html"><?php echo $value['ten_sp'] ?></a>
+																	<a href="single.php"><?php echo $value['ten_sp'] ?></a>
 																</h4>
 																<div class="grid-price mt-2">
 																	<span class="money "><?php echo number_format($value['gia']) ?></span>

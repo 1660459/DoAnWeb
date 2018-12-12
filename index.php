@@ -110,7 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<img src="<?php echo $value['hinh_anh'] ?>" class="img-responsive" alt="" width="301" height="250">
 									<div class="men-cart-pro">
 										<div class="inner-men-cart-pro">
-											<a href="single.php" class="link-product-add-cart">Quick View</a>
+											<a href="single.php?id=1id=1" class="link-product-add-cart">Quick View</a>
 										</div>
 									</div>
 									<span class="product-new-top">New</span>
@@ -121,6 +121,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<div class="product_price">
 												<h4 style="min-height:50px;">
 													<a href="single.html"><?php echo $value['ten_sp'] ?></a>
+									
 												</h4>
 												<div class="grid-price mt-2">
 													<span class="money "><?php echo $value['gia'] ?></span>
@@ -202,10 +203,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<img src="<?php echo $value['hinh_anh'] ?>" class="img-fluid" alt="">
 													<div class="men-cart-pro">
 														<div class="inner-men-cart-pro">
-															<a href="single.php" class="link-product-add-cart">Quick View</a>
+															<a href="single.php?id=1" class="link-product-add-cart">Quick View</a>
 														</div>
 													</div>
-													<span class="product-new-top">New</span>
+													
 												</div>
 												<div class="item-info-product">
 
@@ -302,10 +303,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<img src="<?php echo $value['hinh_anh'] ?>" class="img-fluid" alt="">
 													<div class="men-cart-pro">
 														<div class="inner-men-cart-pro">
-															<a href="single.php" class="link-product-add-cart">Quick View</a>
+															<a href="single.php?id=1" class="link-product-add-cart">Quick View</a>
 														</div>
 													</div>
-													<span class="product-new-top">New</span>
+													
 												</div>
 												<div class="item-info-product">
 

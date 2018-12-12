@@ -67,7 +67,9 @@
 					<!---->
 				</div>
 			</div>
-			<div class="search">
+			
+			
+			 <div class="search">
 				<div class="mobile-nav-button">
 					<button id="trigger-overlay" type="button">
 						<i class="fas fa-search"></i>
@@ -87,7 +89,7 @@
 
 				</div>
 				<!-- open/close -->
-			</div>
+			</div> 
 			<label class="top-log mx-auto"></label>
 			<nav class="navbar navbar-expand-lg navbar-light bg-light top-header mb-2">
 
@@ -123,42 +125,16 @@
 												<li>
 													<a href="shop.php?id=<?php echo $value['idNSX'] ?>&nsx=<?php echo $value['ten_NSX'] ?>"><?php echo $value['ten_NSX'] ?></a>
 												</li>
-												<?php endforeach ?>
-												<li class="mt-3">
-													<h5>View more pages</h5>
-												</li>
-												<li class="mt-2">
-													<a href="about.html">About</a>
-												</li>
-												<li>
-													<a href="customer.html">Customers</a>
-												</li>
+												<?php endforeach ?>																								
 											</ul>
-										</div>
-										<div class="col-md-4 media-list span4 text-left">
-											<h5 class="tittle-w3layouts-sub"> Tittle goes here </h5>
-											<div class="media-mini mt-3">
-												<a href="shop.html">
-													<img src="images/g2.jpg" class="img-fluid" alt="">
-												</a>
-											</div>
-										</div>
-										<div class="col-md-4 media-list span4 text-left">
-											<h5 class="tittle-w3layouts-sub">Tittle goes here </h5>
-											<div class="media-mini mt-3">
-												<a href="shop.html">
-													<img src="images/g3.jpg" class="img-fluid" alt="">
-												</a>
-											</div>
-
-										</div>
+										</div>										
 									</div>
 									<hr>
 								</li>
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
+							<a href="shop.php" class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
 							    aria-expanded="false">
 								Product
 							</a>

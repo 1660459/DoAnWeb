@@ -51,6 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 		<!--//banner -->
+		
         <!--/shop-->
 		<section class="banner-bottom-wthreelayouts py-lg-5 py-3">
 			<div class="container">
@@ -62,8 +63,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 ?>
 							<div class="col-lg-4 single-right-left ">
 									<div class="grid images_3_of_2">
-										<div class="flexslider1">
-					
+										<div class="flexslider1">				
 											<ul class="slides">
 										
 												<li data-thumb="images/d2.jpg">
@@ -78,7 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-lg-8 single-right-left simpleCart_shelfItem">
 									<h3><?php echo $product['ten_sp'] ?></h3>
 									<p><span class="item_price"><?php echo number_format($product['gia']) ?></span>
-										<del>$1,199</del>
+										<del>7,199,000</del>
 									</p>
 									<div class="rating1">
 										<ul class="stars">
@@ -98,7 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 									<div class="color-quality">
 										<div class="color-quality-right">
-											<h5>Quality :</h5>
+											<h5>Number :</h5>
 											<select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
 													<option value="null">5 Qty</option>
 													<option value="null">6 Qty</option> 
@@ -107,19 +107,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												</select>
 										</div>
 									</div>
-									<div class="occasional">
-										<h5>Types :</h5>
-										<div class="colr ert">
-											<label class="radio"><input type="radio" name="radio" checked=""><i></i> Irayz Butterfly(Black)</label>
-										</div>
-										<div class="colr">
-											<label class="radio"><input type="radio" name="radio"><i></i> Irayz Butterfly (Grey)</label>
-										</div>
-										<div class="colr">
-											<label class="radio"><input type="radio" name="radio"><i></i> Irayz Butterfly (white)</label>
-										</div>
-										<div class="clearfix"> </div>
-									</div>
+									
 									<div class="occasion-cart">
 											<div class="googles single-item singlepage">
 													<form action="#" method="post">
