@@ -134,7 +134,7 @@
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a href="shop.php" class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
 							    aria-expanded="false">
 								Product
 							</a>
@@ -142,8 +142,7 @@
 								<li>
 									<div class="row">
 										<?php
-										$cate = SelectCategoryProduct();
-																
+										$cate = SelectCategoryProduct();																
 										?>
 										<?php foreach($cate as $value): ?>
 										<?php $productsbycate = SelectProductsByCategory($value['idDanhMuc']); ?>
@@ -152,7 +151,7 @@
 											<ul>
 												<?php foreach($productsbycate as $product): ?>
 												<li class="media-mini mt-3">
-													<a href="single.php?id=<?php echo $product['id_sp'] ?>"><?php echo $product['ten_sp'] ?></a>
+													<a href="single.php?id=1<?php echo $product['id_sp'] ?>"><?php echo $product['ten_sp'] ?></a>
 												</li>
 												<?php endforeach ?>
 											</ul>
@@ -167,7 +166,6 @@
 							<a class="nav-link" href="contact.php">Contact</a>
 						</li>
 					</ul>
-
 				</div>
 			</nav>
 		</header>

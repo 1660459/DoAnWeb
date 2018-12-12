@@ -62,6 +62,15 @@
         return $products;
     }
 
+    function SelectProduct()
+    {
+        global $conn;
+        $stmt = $conn-> prepare("SELECT * FROM danhmuc ");
+        $stmt->execute();
+	    $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $product;
+    }
+   
     function SelectProducer()
     {
         global $conn;
@@ -74,10 +83,29 @@
     function SelectProductByProducer($id)
     {
         global $conn;
-        $stmt = $conn-> prepare("SELECT * FROM sanpham as `sp` WHERE `sp`.`NSX_idNSX` = ? ");
+        $stmt = $conn-> prepare("SELECT * FROM sanpham as `sp` WHERE `sp`.`NSX_idNSX` = ?");
         $stmt->execute(array($id));
 	    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $products;
     }
+
+    function Select5Type($id)
+    {
+        global $conn;
+        $stmt = $conn-> prepare("SELECT * FROM sanpham as `sp` WHERE `sp`.`DanhMuc_idDanhMuc` = ? LIMIT 0,5 ");
+        $stmt->execute(array($id));
+	    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $products;
+    }
+
+    function Select5Producer()
+    {
+        global $conn;
+        $stmt = $conn-> prepare("SELECT * FROM sanpham as `sp` WHERE `sp`.`NSX_idNSX` = ? LIMIT 0,5 ");
+        $stmt->execute(array($id));
+	    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $products;
+    }
+
 ?>
 

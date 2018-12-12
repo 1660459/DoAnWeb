@@ -85,52 +85,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="left-side">
 								<h3 class="agileits-sear-head">Product Type</h3>
 								<ul>
-									<li>										
-										<input type="checkbox" class="checked">
-										<span class="span">RayBank</span>
-									</li>
-									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">Classic</span>
-									</li>
-                                    <li>
-										<input type="checkbox" class="checked">
-										<span class="span">Asan</span>
-									</li>
+									<?php $producer = SelectProduct() ?>
+										<?php foreach ($producer as  $value): ?>
+											<li>
+												<a href="shop.php?id=<?php echo $value['idDanhMuc'] ?>&danhmuc=<?php echo $value['ten_danhmuc'] ?>"><?php echo $value['ten_danhmuc'] ?></a>
+											</li>
+										<?php endforeach ?>																								
 								</ul>
 							</div>
 							<!-- // preference -->
-							<!-- discounts -->
+							<!-- producer -->
 							<div class="left-side">
 								<h3 class="agileits-sear-head">Producer</h3>
-								<ul>
-									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">5% or More</span>
-									</li>
-									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">10% or More</span>
-									</li>
-									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">20% or More</span>
-									</li>
-									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">30% or More</span>
-									</li>
-									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">50% or More</span>
-									</li>
-									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">60% or More</span>
-									</li>
-								</ul>
+								
+											<ul>
+												<?php $producer = SelectProducer() ?>
+												<?php foreach ($producer as  $value): ?>
+												<li>
+													<a href="shop.php?id=<?php echo $value['idNSX'] ?>&nsx=<?php echo $value['ten_NSX'] ?>"><?php echo $value['ten_NSX'] ?></a>
+												</li>
+												<?php endforeach ?>																								
+											</ul>
 							</div>
-							<!-- //discounts -->
+							<!-- //producer -->
 							<!-- reviews -->
 							<div class="customer-rev left-side">
 								<h3 class="agileits-sear-head">Customer Review</h3>
@@ -264,8 +241,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										}
 								
 									?>
-									<?php foreach ($products as  $value): ?>
-								
+									<?php foreach ($products as  $value): ?>								
 									<div class="col-md-3 product-men women_two shop-gd">
 										<div class="product-googles-info googles">
 											<div class="men-pro-item">
@@ -273,7 +249,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<img src="<?php echo $value['hinh_anh'] ?>" class="img-responsie" alt="" width="200" height="150">
 													<div class="men-cart-pro">
 														<div class="inner-men-cart-pro">
-															<a href="single.php" class="link-product-add-cart">Quick View</a>
+															<a href="single.php?id=1" class="link-product-add-cart">Quick View</a>
 														</div>
 													</div>
 													<span class="product-new-top">New</span>
