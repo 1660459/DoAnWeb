@@ -13,7 +13,7 @@
 				<div class="col-md-6 logo-w3layouts text-center">
 					<h1 class="logo-w3layouts">
 						<a class="navbar-brand" href="index.php">
-							Goggles </a>
+							GLASS'Z HOUSE </a>
 					</h1>
 				</div>
 
@@ -67,29 +67,17 @@
 					<!---->
 				</div>
 			</div>
-			
-			
-			 <div class="search">
-				<div class="mobile-nav-button">
-					<button id="trigger-overlay" type="button">
-						<i class="fas fa-search"></i>
-					</button>
-				</div>
-				<!-- open/close -->
-				<div class="overlay overlay-door">
-					<button type="button" class="overlay-close">
-						<i class="fa fa-times" aria-hidden="true"></i>
-					</button>
-					<form action="#" method="post" class="d-flex">
-						<input class="form-control" type="search" placeholder="Search here..." required="">
-						<button type="submit" class="btn btn-primary submit">
-							<i class="fas fa-search"></i>
-						</button>
-					</form>
+						
+			<div class="w3l_search">
+			<form action="search.php" method="get">
+				<input type="search" name="Search" placeholder="Search for a Product..." required="">
+				<button type="submit" class="btn btn-default search" aria-label="Left Align">
+					<i class="fa fa-search" aria-hidden="true"> </i>
+				</button>
+				<div class="clearfix"></div>
+			</form>
+			</div>
 
-				</div>
-				<!-- open/close -->
-			</div> 
 			<label class="top-log mx-auto"></label>
 			<nav class="navbar navbar-expand-lg navbar-light bg-light top-header mb-2">
 
@@ -151,7 +139,7 @@
 											<ul>
 												<?php foreach($productsbycate as $product): ?>
 												<li class="media-mini mt-3">
-													<a href="single.php?id=1<?php echo $product['id_sp'] ?>"><?php echo $product['ten_sp'] ?></a>
+													<a href="single.php?id=<?php echo $product['id_sp'] ?>"><?php echo $product['ten_sp'] ?></a>
 												</li>
 												<?php endforeach ?>
 											</ul>

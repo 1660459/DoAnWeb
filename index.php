@@ -110,7 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<img src="<?php echo $value['hinh_anh'] ?>" class="img-responsive" alt="" width="301" height="250">
 									<div class="men-cart-pro">
 										<div class="inner-men-cart-pro">
-											<a href="single.php?id=1id=1" class="link-product-add-cart">Quick View</a>
+											<a href="single.php?id=<?php echo $value['id_sp'] ?>" class="link-product-add-cart">Quick View</a>
 										</div>
 									</div>
 									<span class="product-new-top">New</span>
@@ -203,50 +203,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<img src="<?php echo $value['hinh_anh'] ?>" class="img-fluid" alt="">
 													<div class="men-cart-pro">
 														<div class="inner-men-cart-pro">
-															<a href="single.php?id=1" class="link-product-add-cart">Quick View</a>
+															<a href="single.php?id=<?php echo $value['id_sp'] ?>" class="link-product-add-cart">Quick View</a>
 														</div>
 													</div>
 													
 												</div>
 												<div class="item-info-product">
-
 													<div class="info-product-price">
 														<div class="grid_meta">
 															<div class="product_price">
 																<h4>
-																	<a href="single.html">Fastrack Aviator </a>
+																	<a href="single.html"> <?php echo $value['ten_sp'] ?></a>
 																</h4>
 																<div class="grid-price mt-2">
 																	<span class="money "><?php echo $value['gia'] ?></span>
 																</div>
 															</div>
-															<ul class="stars">
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star-half-o" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star-o" aria-hidden="true"></i>
-																	</a>
-																</li>
-															</ul>
+															
 														</div>
 														<div class="googles single-item hvr-outline-out">
 															<form action="#" method="post">
@@ -285,7 +258,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h3 class="tittle-w3layouts my-lg-4 my-4">Hight Viewer </h3>
 
 				<?php 
-					$products = HightViewer();			
+					$viewproducts = HightViewer();	
+		
 				 ?>		
 				
                 <!--/slide-->
@@ -293,7 +267,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!--//banner-sec-->
 					<div class="mid-slider">										
 						<div class="owl-carousel owl-theme row">
-						<?php foreach ($products as $value): ?>						
+						<?php foreach ($viewproducts as $value): ?>						
 							<div class="item">
 								<div class="gd-box-info text-center">
 									<div class="product-men women_two bot-gd">
@@ -303,7 +277,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<img src="<?php echo $value['hinh_anh'] ?>" class="img-fluid" alt="">
 													<div class="men-cart-pro">
 														<div class="inner-men-cart-pro">
-															<a href="single.php?id=1" class="link-product-add-cart">Quick View</a>
+															<a href="single.php?id=<?php echo $value['id_sp'] ?>" class="link-product-add-cart">Quick View</a>
 														</div>
 													</div>
 													
@@ -314,7 +288,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 														<div class="grid_meta">
 															<div class="product_price">
 																<h4>
-																	<a href="single.html">Fastrack Aviator </a>
+																	<a href="single.html"><?php echo $value['ten_sp'] ?> </a>
 																</h4>
 																<div class="grid-price mt-2">
 																	<span class="money "><?php echo $value['gia'] ?></span>
@@ -366,7 +340,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 							</div>													
-							<?php endforeach ?>
+						<?php endforeach ?>
 						</div>					
 					</div>				
 				</div>              

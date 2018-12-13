@@ -66,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<div class="flexslider1">				
 											<ul class="slides">
 										
-												<li data-thumb="img/d2.jpg">
+												<li data-thumb="images/d2.jpg">
 													<div class="thumb-image"> <img src="<?php echo $product['hinh_anh'] ?>" data-imagezoom="true" class="img-fluid" alt=" "> </div>
 												</li>
 	
@@ -158,21 +158,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="container-fluid">
 					<!--/slide-->
 					<div class="slider-img mid-sec mt-lg-5 mt-2 px-lg-5 px-3">
+				
 						<!--//banner-sec-->
 						<h3 class="tittle-w3layouts text-left my-lg-4 my-3">5 Products The Same Type</h3>
 						<div class="mid-slider">
 							<div class="owl-carousel owl-theme row">
 							<?php
-							$id = $_GET['id'];
-							$product =  Select5Type($id);					
+
+							$id_loai = $product['DanhMuc_idDanhMuc'];
+
+							$product_same_type =  Select5Type($id_loai);
+	
 						 	?>
+							 <?php foreach ($product_same_type as  $value): ?>
+
 								<div class="item">
 									<div class="gd-box-info text-center">
 										<div class="product-men women_two bot-gd">
 											<div class="product-googles-info slide-img googles">
 												<div class="men-pro-item">
 													<div class="men-thumb-item">
-														<img src="<?php echo $product['hinh_anh'] ?>" class="img-fluid" alt="">
+														<img src="<?php echo $value['hinh_anh'] ?>" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
 																<a href="single.php?id=1" class="link-product-add-cart">Quick View</a>
@@ -186,10 +192,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 															<div class="grid_meta">
 																<div class="product_price">
 																	<h4>
-																		<a href="single.php"><?php echo $product['ten_sp'] ?></a>
+																		<a href="single.php?id=1"><?php echo $value['ten_sp'] ?></a>
 																	</h4>
 																	<div class="grid-price mt-2">
-																		<span class="money "><?php echo number_format($product['gia']) ?></span>
+																		<span class="money "><?php echo number_format($value['gia']) ?></span>
 																	</div>
 																</div>
 															
@@ -213,9 +219,86 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 										</div>
 									</div>
-								</div>								
+								</div>	
+							<?php endforeach ?>							
 								
 							</div>
+
+						</div>
+					</div>
+					<!--//slider-->
+
+					<div class="container-fluid">
+					<!--/slide-->
+					<div class="slider-img mid-sec mt-lg-5 mt-2 px-lg-5 px-3">				
+						<!--//banner-sec-->
+						<h3 class="tittle-w3layouts text-left my-lg-4 my-3">5 Products The Same Producer</h3>
+						<div class="mid-slider">
+							<div class="owl-carousel owl-theme row">
+							<?php
+
+
+
+							$id_producer = $product['NSX_idNSX'];
+							$product_same_producer =  Select5Producer($id_producer);	
+
+					
+													
+						 	?>
+							 <?php foreach ($product_same_producer as  $value): ?>
+
+								<div class="item">
+									<div class="gd-box-info text-center">
+										<div class="product-men women_two bot-gd">
+											<div class="product-googles-info slide-img googles">
+												<div class="men-pro-item">
+													<div class="men-thumb-item">
+														<img src="<?php echo $value['hinh_anh'] ?>" class="img-fluid" alt="">
+														<div class="men-cart-pro">
+															<div class="inner-men-cart-pro">
+																<a href="single.php?id=1" class="link-product-add-cart">Quick View</a>
+															</div>
+														</div>
+														
+													</div>
+													<div class="item-info-product">
+
+														<div class="info-product-price">
+															<div class="grid_meta">
+																<div class="product_price">
+																	<h4>
+																		<a href="single.php?id=1"><?php echo $value['ten_sp'] ?></a>
+																	</h4>
+																	<div class="grid-price mt-2">
+																		<span class="money "><?php echo number_format($value['gia']) ?></span>
+																	</div>
+																</div>
+															
+															</div>
+															<div class="googles single-item hvr-outline-out">
+																<form action="#" method="post">
+																	<input type="hidden" name="cmd" value="_cart">
+																	<input type="hidden" name="add" value="1">
+																	<input type="hidden" name="googles_item" value="Fastrack Aviator">
+																	<input type="hidden" name="amount" value="325.00">
+																	<button type="submit" class="googles-cart pgoogles-cart">
+																		<i class="fas fa-cart-plus"></i>
+																	</button>
+																</form>
+
+															</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>	
+							<?php endforeach ?>							
+								
+							</div>
+
 						</div>
 					</div>
 					<!--//slider-->
