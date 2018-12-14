@@ -35,6 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
     <?php include 'module/header.php' ?>
+
     <!-- banner -->
 		<div class="banner_inner">
 			<div class="services-breadcrumb">
@@ -229,19 +230,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="row">
 					
 					
-									<?php
-										$id = isset($_GET['id']) ? $_GET['id'] : "";
+								
+                                        <?php
 
-										if(!empty($id))
-										{
-											$products = SelectProductByProducer($id);								
-										}
-										else{
-											$products = SelectAllProduct();
-										}
+                                        $key_word = $_GET['Search'];
 
-									?>
-									<?php foreach ($products as  $value): ?>
+                                        $search_product = SearchProduct($key_word, $key_word);
+
+                                        ?>
+									<?php foreach ($search_product as  $value): ?>
 							
 									<div class="col-md-3 product-men women_two shop-gd">
 										<div class="product-googles-info googles">
