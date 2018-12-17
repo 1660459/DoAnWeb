@@ -45,7 +45,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 					<ul class="short">
 						<li>
-							<a href="index.html">Home</a>
+							<a href="index.php">Home</a>
 							<i>|</i>
 						</li>
 						<li>Checkout </li>

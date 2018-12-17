@@ -53,7 +53,8 @@
 				
 			</div>
 						
-			<div class="w3l_search">
+			<div class="w3l_search"
+			>
 			<form action="search.php" method="get">
 				<input type="search" name="Search" placeholder="Search for a Product..." required="">
 				<button type="submit" class="btn btn-default search" aria-label="Left Align">

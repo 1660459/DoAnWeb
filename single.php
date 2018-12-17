@@ -45,7 +45,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a href="index.php">Home</a>
 							<i>|</i>
 						</li>
-						<li>About Us</li>
+						<li>Single Page</li>
 					</ul>
 			</div>
 		</div>
@@ -64,8 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-lg-4 single-right-left ">
 									<div class="grid images_3_of_2">
 										<div class="flexslider1">				
-											<ul class="slides">
-										
+											<ul class="slides">										
 												<li data-thumb="images/d2.jpg">
 													<div class="thumb-image"> <img src="<?php echo $product['hinh_anh'] ?>" data-imagezoom="true" class="img-fluid" alt=" "> </div>
 												</li>
@@ -105,19 +104,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<form action="#" method="post">
 														<input type="hidden" name="cmd" value="_cart">
 														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="googles_item" value="Farenheit">
-														<input type="hidden" name="amount" value="575.00">
-														<a href="checkout.php">
+														<input type="hidden" name="googles_item" value="hp">
+														<input type="hidden" name="amount" value="575.00">														
 															<button type="submit" class="googles-cart pgoogles-cart">
 																ADD TO CART
 															</button>
-														</a>
-													
+																						
 													</form>
 													
 												</div>
 									</div>
-									<a  href="checkout.php?id=<?php echo $product?>">ADD TO CART</a>
+
+									<div class="occasion-cart">
+											<div class="googles single-item singlepage">	
+																																		
+															<button type="submit" class="googles-cart pgoogles-cart">
+															SHOPPING
+															</button>
+															<a href = "login.php" > </a>							
+													</form>
+													
+												</div>
+									</div>
+
 									<ul class="footer-social text-left mt-lg-4 mt-3">
 											<li>Share On : </li>
 											<li class="mx-2">
@@ -178,7 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 														<img src="<?php echo $value['hinh_anh'] ?>" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
-																<a href="single.php?id=1" class="link-product-add-cart">Quick View</a>
+															 	<a href="single.php?id=<?php echo $value['id_sp'] ?>" class="link-product-add-cart">Quick View</a>
 															</div>
 														</div>
 														
@@ -189,7 +198,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 															<div class="grid_meta">
 																<div class="product_price">
 																	<h4>
-																		<a href="single.php?id=1"><?php echo $value['ten_sp'] ?></a>
+																		<a href="single.php?id=<?php echo $value['id_sp'] ?>"><?php echo $value['ten_sp'] ?></a>
 																	</h4>
 																	<div class="grid-price mt-2">
 																		<span class="money "><?php echo number_format($value['gia']) ?></span>
@@ -253,7 +262,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 														<img src="<?php echo $value['hinh_anh'] ?>" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
-																<a href="single.php?id=1" class="link-product-add-cart">Quick View</a>
+															<a href="single.php?id=<?php echo $value['id_sp'] ?>"class="link-product-add-cart">Quick View</a>
 															</div>
 														</div>
 														

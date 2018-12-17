@@ -1,3 +1,4 @@
+
 <!--footer -->
 <footer class="py-lg-5 py-3">
 		<div class="container-fluid px-lg-5 px-3">
@@ -12,7 +13,7 @@
 						<ul class="footer-social text-left mt-lg-4 mt-3">
 
 							<li class="mx-2">
-								<a href="#">
+								<a href="https://www.facebook.com/PPu.Tran">
 									<span class="fab fa-facebook-f"></span>
 								</a>
 							</li>
@@ -66,19 +67,19 @@
 					</div>
 					<ul class="links">
 						<li>
-							<a href="index.html">Home</a>
+							<a href="index.php">Home</a>
 						</li>
 						<li>
-							<a href="about.html">About</a>
+							<a href="about.php">About</a>
 						</li>
 						<li>
-							<a href="404.html">Error</a>
+							<a href="404.php">Error</a>
 						</li>
 						<li>
-							<a href="shop.html">Shop</a>
+							<a href="shop.php">Shop</a>
 						</li>
 						<li>
-							<a href="contact.html">Contact Us</a>
+							<a href="contact.php">Contact Us</a>
 						</li>
 					</ul>
 				</div>

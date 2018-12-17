@@ -30,7 +30,7 @@
 				$_SESSION['user_id'] = $login_user['id'];
 				$_SESSION['email'] = $login_user['email'];
 				$_SESSION['password'] = $login_user['password'];
-				echo "<script>alert('Dang nhap thanh cong'); location.href = 'index.php';</script>";
+				echo "<script>alert('Dang nhap thanh cong'); location.href = 'loged-in.php';</script>";
 			}
 			else {
 				$_SESSION['error'] = "Dang nhap that bai";

@@ -116,6 +116,7 @@
 	    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $products;
     }
+    
     function KiemTraPost($string){
         return isset($_POST[$string]) ? $_POST[$string] : '';
     }
