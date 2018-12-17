@@ -1,5 +1,74 @@
 <?php require_once 'dataProvider.php'; ?>
 <?php require_once 'module/functions.php'; ?>
+<?php 
+   require_once 'module/Database.php';
+      
+   $db = new Database();
+    
+    
+
+    // Connect database
+    
+    $db = new Database();
+	$data = [];
+	// Khi duoi sever no xac nhan : Form co phuong thuc la POST
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $loi = []; // Thong bao loi~
+        $data = [
+            'name' => $_POST['name'],
+            'email' => $_POST['email'],
+            'password' => $_POST['password'],
+            're_password' => $_POST['re_password']
+        ];
+
+        $name = KiemTraPost('name'); // Gan' du~ Lieu trong form
+        $email = KiemTraPost('email');//
+        $password = KiemTraPost('password');//
+        $re_password = KiemTraPost('re_password');//
+
+        if($name == '')
+        {
+            $error['name'] = "Ban chua nhap day du name";
+        }
+        
+        if($email == '')
+        {
+            $error['email'] = "Ban chua nhap day du email";
+        }
+        if($password == '')
+        {
+            $error['password'] = "Ban chua nhap day du password";
+        }
+        if($re_password = "")
+        {
+            $error['re_password'] = "Ban chua nhap day du re_password";
+        }
+        if($re_password != $password){
+            $error['re_password'] = "Password phai giong nhau";
+        }
+        
+        // Neu ma 
+        if(empty($loi))
+        {
+            $id_insert = $db->insertAll('nguoidung',$data);
+            if($id_insert > 0)
+            {
+                $_SESSION['success'] = "Them user thanh cong";
+                echo "<script>location.href = 'login.php'</script>";
+            }
+            else 
+            {
+                $_SESSION['loi'] = "Them user that bai";
+            }
+        }
+
+
+
+        
+    }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,156 +104,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
 	    rel="stylesheet">
 </head>
-
 <body>
-     <?php include 'module/header.php'?>   
-     <!-- banner -->
+    <?php include 'module/header.php' ?>
+    <!-- banner -->
 		<div class="banner_inner">
 			<div class="services-breadcrumb">
 				<div class="inner_breadcrumb">
-
 					<ul class="short">
 						<li>
-							<a href="index.html">Home</a>
+							<a href="index.php">Home</a>
 							<i>|</i>
 						</li>
-						<li>Checkout </li>
+						<li>Register</li>
 					</ul>
 				</div>
 			</div>
 
 		</div>
 		<!--//banner -->
-    </div>
-    <section class="banner-bottom-wthreelayouts py-lg-5 py-3">
+        <!-- register -->
+	<div class="register">
 		<div class="container">
-			<div class="inner-sec-shop px-lg-4 px-3">
-				<h3 class="tittle-w3layouts my-lg-4 mt-3">Checkout </h3>
-				<div class="checkout-right">
-					<h4>Your shopping cart contains:
-						<span>3 Products</span>
-					</h4>
-					<table class="timetable_sub">
-						<thead>
-							<tr>
-								<th>SL No.</th>
-								<th>Product</th>
-								<th>Quantity</th>
-								<th>Product Name</th>
-								<th>Price</th>
-								<th>Remove</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="rem1">
-								<td class="invert">1</td>
-								<td class="invert-image">
-									<a href="single.php">
-										<img src="images/s1.jpg" alt=" " class="img-responsive">
-									</a>
-								</td>
-								<td class="invert">
-									<div class="quantity">
-										<div class="quantity-select">
-											<div class="entry value-minus">&nbsp;</div>
-											<div class="entry value">
-												<span>1</span>
-											</div>
-											<div class="entry value-plus active">&nbsp;</div>
-										</div>
-									</div>
-								</td>
-								<td class="invert">Irayz Butterfly </td>
-								<td class="invert">$281.00</td>
-								<td class="invert">
-									<div class="rem">
-										<div class="close1"> </div>
-									</div>
-
-								</td>
-							</tr>
-							
-						</tbody>
-					</table>
-				</div>
-				<div class="checkout-left row">
-					<div class="col-md-4 checkout-left-basket">
-						<h4>Continue to basket</h4>
-						<ul>
-							<li>Product1
-								<i>-</i>
-								<span>$281.00 </span>
-                            </li>
-                            							
-							<li>Total Service Charges
-								<i>-</i>
-								<span>$55.00</span>
-							</li>
-							<li>Total
-								<i>-</i>
-								<span>$986.00</span>
-							</li>
-						</ul>
-					</div>
-					<div class="col-md-8 address_form">
-						<h4>Add a new Details</h4>
-						<form action="payment.php" method="post" class="creditly-card-form agileinfo_form">
-							<section class="creditly-wrapper wrapper">
-								<div class="information-wrapper">
-									<div class="first-row form-group">
-										<div class="controls">
-											<label class="control-label">Full name: </label>
-											<input class="billing-address-name form-control" type="text" name="name" placeholder="Full name">
-										</div>
-										<div class="card_number_grids">
-											<div class="card_number_grid_left">
-												<div class="controls">
-													<label class="control-label">Mobile number:</label>
-													<input class="form-control" type="text" placeholder="Mobile number">
-												</div>
-											</div>
-											<div class="card_number_grid_right">
-												<div class="controls">
-													<label class="control-label">Landmark: </label>
-													<input class="form-control" type="text" placeholder="Landmark">
-												</div>
-											</div>
-											<div class="clear"> </div>
-										</div>
-										<div class="controls">
-											<label class="control-label">Town/City: </label>
-											<input class="form-control" type="text" placeholder="Town/City">
-										</div>
-										<div class="controls">
-											<label class="control-label">Address type: </label>
-											<select class="form-control option-w3ls">
-												<option>Office</option>
-												<option>Home</option>
-												<option>Commercial</option>
-
-											</select>
-										</div>
-									</div>
-									<button class="submit check_out">Delivery to this Address</button>
-								</div>
-							</section>
-						</form>
-						<div class="checkout-right-basket">
-							<a href="payment.php">Make a Payment </a>
-						</div>
-					</div>
-
-					<div class="clearfix"> </div>
-
-				</div>
-
+            <h2 class = "rh"> Register Here</h2>            
+			<div class="login-form-grids">
+				<h5>profile information</h5>
+				<form action="#" method="post">
+					<input type="text" name="name"  placeholder="Full Name..." required=" " >
+                    
+				<h6>Login information</h6>
+					
+					<input type="email" name="email" placeholder="Email Address" required=" " >
+					<input type="password" name="password" placeholder="Password" required=" " >
+					<input type="password" name="re_password" placeholder="Password Confirmation" required=" " >
+					
+					<input type="submit" value="Register">
+				</form>
 			</div>
-
+			<div class="register-home">
+				<a href="index.php">Home</a>
+			</div>
 		</div>
-	</section>
-	<!--//checkout-->
-     <?php include 'module/footer.php'?>   
-     <!--jQuery-->
+	</div>
+<!-- //register -->
+<?php include 'module/footer.php' ?>	
+        <!--jQuery-->
 		<script src="js/jquery-2.2.3.min.js"></script>
 		<!-- newsletter modal -->
 		<!--search jQuery-->
@@ -272,9 +235,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				})
 			})
 		</script>
-
 		<!-- //end-smooth-scrolling -->
-
 
 		<!-- dropdown nav -->
 		<script>
@@ -325,7 +286,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		<script src="js/bootstrap.js"></script>
 		<!-- js file -->
-
-
 </body>
 </html>

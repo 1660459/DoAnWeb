@@ -19,11 +19,23 @@
 
 				<div class="col-md-3 top-info-cart text-right mt-lg-4">
 					<ul class="cart-inner-info">
+						<li><i class="arrow-right" aria-hidden="true"></i>
+						<a href="registered.php">Create Account</a></li>
+						<?php if(isset($_SESSION['user_id'])) : ?>
 						<li class="button-log">
 							<a class="btn-open" href="#">
-								<span class="fa fa-user" aria-hidden="true"></span>
+							<li>Xin Chao : <a href="login.php"><?php echo $_SESSION['user_name'] ?></a></li>	
 							</a>
+							<a href="/../DoAnWeb/customer.php?id=<?php echo $_SESSION['user_id'] ?>">Infomation</a>
+							<a href="/../DoAnWeb/logout.php">Log Out</a>
 						</li>
+						<?php else : ?>
+							<li class="button-log">
+								<a class="btn-open" href="#">
+								<li><a href="login.php">Login</a></li>	
+								</a>
+							</li>
+						<?php endif ; ?>
 						<li class="galssescart galssescart2 cart cart box_1">
 							<form action="#" method="post" class="last">
 								<input type="hidden" name="cmd" value="_cart">
@@ -33,39 +45,12 @@
 									<i class="fas fa-cart-arrow-down"></i>
 								</button>
 							</form>
-						</li>
-					</ul>
-					<!---->
-					<div class="overlay-login text-left">
-						<button type="button" class="overlay-close1">
-							<i class="fa fa-times" aria-hidden="true"></i>
-						</button>
-						<div class="wrap">
-							<h5 class="text-center mb-4">Login Now</h5>
-							<div class="login p-5 bg-dark mx-auto mw-100">
-								<form action="#" method="post">
-									<div class="form-group">
-										<label class="mb-2">Email address</label>
-										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
-										<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-									</div>
-									<div class="form-group">
-										<label class="mb-2">Password</label>
-										<input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">
-									</div>
-									<div class="form-check mb-2">
-										<input type="checkbox" class="form-check-input" id="exampleCheck1">
-										<label class="form-check-label" for="exampleCheck1">Check me out</label>
-									</div>
-									<button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
-
-								</form>
-							</div>
-							<!---->
-						</div>
-					</div>
-					<!---->
+						</li>						
+																
+					</ul>					
+					
 				</div>
+				
 			</div>
 						
 			<div class="w3l_search">

@@ -89,13 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
 										</ul>
 									</div>
-									<div class="description">
-										<h5>Check delivery, payment options and charges at your location</h5>
-										<form action="#" method="post">
-												<input class="form-control" type="text" name="Email" placeholder="Please enter..." required="">
-											<input type="submit" value="Check">
-										</form>
-									</div>
+									
 									<div class="color-quality">
 										<div class="color-quality-right">
 											<h5>Number :</h5>
@@ -113,14 +107,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 														<input type="hidden" name="add" value="1">
 														<input type="hidden" name="googles_item" value="Farenheit">
 														<input type="hidden" name="amount" value="575.00">
-														<button type="submit" class="googles-cart pgoogles-cart">
-															Add to Cart
-														</button>
-														
+														<a href="checkout.php">
+															<button type="submit" class="googles-cart pgoogles-cart">
+																ADD TO CART
+															</button>
+														</a>
+													
 													</form>
-		
+													
 												</div>
 									</div>
+									<a  href="checkout.php?id=<?php echo $product?>">ADD TO CART</a>
 									<ul class="footer-social text-left mt-lg-4 mt-3">
 											<li>Share On : </li>
 											<li class="mx-2">
