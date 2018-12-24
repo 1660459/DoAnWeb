@@ -43,7 +43,16 @@
 								<button class="top_googles_cart" type="submit" name="submit" value="">
 									My Cart
 									<i class="fas fa-cart-arrow-down"></i>
+									<?php 
+										$sum = 0;
+										foreach ($_SESSION['cart'] as $key => $value) {
+											$sum += $value;
+										}								
+									
+									?>
+									<span style="color:red; postion:absolute; top: 5px;"><?php echo  '(' .  $sum . ')';  ?></span>
 								</button>
+							
 							</form>
 						</li>						
 																

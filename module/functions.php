@@ -117,6 +117,15 @@
         return $products;
     }
     
+    function SelectProductCart($id_sp)
+    {
+        global $conn;
+        $stmt = $conn-> prepare("SELECT * FROM sanpham as `sp` WHERE `sp`.`id_sp` = ? ");
+        $stmt->execute(array($id_sp));
+	    $products = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $products;
+    }
+    
     function KiemTraPost($string){
         return isset($_POST[$string]) ? $_POST[$string] : '';
     }

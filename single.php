@@ -1,5 +1,28 @@
 <?php require_once 'dataProvider.php'; ?>
 <?php require_once 'module/functions.php'; ?>
+<?php 
+
+	$id = $_GET['id'];
+
+	if(isset($_POST['id_sanpham']))
+    {
+      $id_sp = $_POST['id_sanpham'];
+      $qty = $_SESSION['cart'][$id] + 1;
+    }
+    else{
+      $qty = 0;
+    
+    }
+
+	// unset($_SESSION['cart']);
+
+	$_SESSION['cart'][$id] = $qty;
+	
+	echo "<pre>";
+	print_r($_SESSION);
+	echo "</pre>";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="inner-sec-shop pt-lg-4 pt-3">
 					<div class="row">
 						<?php
-							$id = $_GET['id'];
+						
 							$product =  SelectProductById($id);					
 						 ?>
 							<div class="col-lg-4 single-right-left ">
@@ -101,31 +124,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									
 									<div class="occasion-cart">
 											<div class="googles single-item singlepage">
-													<form action="#" method="post">
-														<input type="hidden" name="cmd" value="_cart">
-														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="googles_item" value="hp">
-														<input type="hidden" name="amount" value="575.00">														
+													<form action="single.php?id=<?php echo $id ?>" method="post">
+														<input type="hidden" name="id_sanpham" value="<?php echo $product['id_sp'] ?>">
+													
+																												
 															<button type="submit" class="googles-cart pgoogles-cart">
 																ADD TO CART
 															</button>
-																						
+
+															<a href = "checkout.php" style="background-color:#1d1d1d; display:inline-block" class="googles-cart pgoogles-cart" > Shopping </a>
+														
+															
+																					
 													</form>
 													
 												</div>
 									</div>
 
-									<div class="occasion-cart">
-											<div class="googles single-item singlepage">	
-																																		
-															<button type="submit" class="googles-cart pgoogles-cart">
-															SHOPPING
-															</button>
-															<a href = "login.php" > </a>							
-													</form>
-													
-												</div>
-									</div>
 
 									<ul class="footer-social text-left mt-lg-4 mt-3">
 											<li>Share On : </li>
@@ -398,7 +413,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<script src="js/demo1-search.js"></script>
 		<!--//search jQuery-->
 		<!-- cart-js -->
-		<script src="js/minicart.js"></script>
+		
 		<script>
 			googles.render();
 

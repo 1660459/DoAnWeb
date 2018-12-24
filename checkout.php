@@ -37,6 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
+<?php if(isset($_SESSION['user_id'])): ?>
      <?php include 'module/header.php'?>   
      <!-- banner -->
 		<div class="banner_inner">
@@ -64,7 +65,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h4>Your shopping cart contains:
 						<span>3 Products</span>
 					</h4>
-					<table class="timetable_sub">
+					<?php 
+					echo "<pre>";
+					print_r($_SESSION['cart']);
+					echo "</pre>";
+					
+					$cart = $_SESSION['cart'];
+
+					?>
+
+					<table class="table timetable_sub">
 						<thead>
 							<tr>
 								<th>SL No.</th>
@@ -76,34 +86,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</tr>
 						</thead>
 						<tbody>
-							<tr class="rem1">
-								<td class="invert">1</td>
-								<td class="invert-image">
-									<a href="single.php">
-										<img src="images/s1.jpg" alt=" " class="img-responsive">
-									</a>
-								</td>
-								<td class="invert">
-									<div class="quantity">
-										<div class="quantity-select">
-											<div class="entry value-minus">&nbsp;</div>
-											<div class="entry value">
-												<span>1</span>
-											</div>
-											<div class="entry value-plus active">&nbsp;</div>
-										</div>
-									</div>
-								</td>
-								<td class="invert">Irayz Butterfly </td>
-								<td class="invert">$281.00</td>
-								<td class="invert">
-									<div class="rem">
-										<div class="close1"> </div>
-									</div>
+							<?php $stt = 0 ?>
+							<?php foreach($cart as $key => $value):  ?>
 
-								</td>
-							</tr>
-							
+							   <?php $product = SelectProductCart($key); ?>
+							  	<?php $stt++ ?>
+								<tr class="rem1">
+									<td class="invert"><?php echo $stt ?></php></td>
+									<td class="invert-image">
+										<a href="single.php">
+											<img src="<?php echo $product['hinh_anh'] ?>" alt=" " class="img-responsive">
+										</a>
+									</td>
+									<td class="invert">
+										<div class="quantity">
+											<div class="quantity-select">
+												<div class="entry value-minus">&nbsp;</div>
+												<div class="entry value">
+													<span><?php echo $cart[$key]; ?></span>
+												</div>
+												<div class="entry value-plus active">&nbsp;</div>
+											</div>
+										</div>
+									</td>
+									<td class="invert"><?php echo $product['ten_sp'] ?> </td>
+									<td class="invert"><?php echo $product['gia'] ?></td>
+									<td class="invert">
+										<div class="rem">
+											<div class="close1"> </div>
+										</div>
+
+									</td>
+								</tr>
+							<?php endforeach ?>
 						</tbody>
 					</table>
 				</div>
@@ -323,9 +338,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
     <!--// end-smoth-scrolling -->
 
-		<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrap.js"></script>
 		<!-- js file -->
+<?php else:
+   header('Location: login.php');
+?>
 
+<?php
+    endif
+?>
 
 </body>
 </html>
