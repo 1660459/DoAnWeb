@@ -9,10 +9,10 @@
 		$trang1=0;
 	}else{
 		$trang1=($trang*5)-5;
-	}
+  }
+  
 	$sql_lietkesp="select * from sanpham,danhmuc,nsx where danhmuc.idDanhMuc=sanpham.DanhMuc_idDanhMuc and nsx.idNSX=sanpham.NSX_idNSX order by sanpham.id_sp desc limit $trang1,30 ";
 	$row_lietkesp=mysqli_query($conn, $sql_lietkesp);
-
 ?>
 
 <table width="100%" border="1">
@@ -31,7 +31,6 @@
   <?php
   $i=1;
   while($dong=mysqli_fetch_array($row_lietkesp)){
-
   ?>
   <tr>
   	
@@ -45,6 +44,7 @@
     <td><?php echo $dong['ten_danhmuc'] ?></td>
     <td><?php echo $dong['ten_NSX'] ?></td>
     <td><?php $sql_tinhtrang = "select tinh_trang from sanpham";
+    
 	$row_tinhtrang = mysqli_query($conn, $sql_tinhtrang);
 	$dong_tinhtrang=mysqli_fetch_array($row_tinhtrang);
 	if($dong_tinhtrang['tinh_trang'] == 1 ){

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="style-login.css" />
-<title>Đăng nhập vào trang admincp</title>
+<title>Đăng nhập vào trang admin</title>
 </head>
 <?php
 	session_start();
