@@ -133,9 +133,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									
 									if(isset($_POST['update-cart']))
 									{
-										$_SESSION['cart'][$product['id_sp']] = $_POST[$product['id_sp']];
-															
+										$_SESSION['cart'][$product['id_sp']] = $_POST[$product['id_sp']];										
 									}
+									
 								$price = $_SESSION['cart'][$product['id_sp']] * $product['gia'];
 								 $total_price = $total_price + $price 
 								?>

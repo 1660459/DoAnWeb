@@ -100,16 +100,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
 										</ul>
 									</div>
-									
-									<div class="color-quality">
-										<div class="color-quality-right">
-											<h5>Number :</h5>
-											<select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-													<option value="null">5 Qty</option>																
-												</select>
-										</div>
-									</div>
-									
+																	
 									<div class="occasion-cart">
 											<div class="googles single-item singlepage">
 													<form action="single.php?id=<?php echo $id ?>" method="post">
