@@ -301,10 +301,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																<input type="hidden" name="add" value="1">
 																<input type="hidden" name="googles_item" value="Opium (Grey)">
 																<input type="hidden" name="amount" value="325.00">
+																<form action="single.php?id=<?php echo $id ?>" method="post">
+
+															<form action="single.php?id=<?php echo $id ?>" method="post">
+															<input type="hidden" name="id_sanpham" value="<?php echo $product['id_sp'] ?>">	
 																<button type="submit" class="googles-cart pgoogles-cart">
 																	<i class="fas fa-cart-plus"></i>
+																	<a href = "checkout.php" > </a>
 																</button>
-
+															</form>		
 															</form>
 
 														</div>

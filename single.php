@@ -1,27 +1,17 @@
 <?php require_once 'dataProvider.php'; ?>
 <?php require_once 'module/functions.php'; ?>
 <?php 
-
 	$id = $_GET['id'];
-
 	if(isset($_POST['id_sanpham']))
     {
       $id_sp = $_POST['id_sanpham'];
       $qty = $_SESSION['cart'][$id] + 1;
     }
     else{
-      $qty = 0;
-    
+      $qty = 0;   
     }
-
 	// unset($_SESSION['cart']);
-
-	$_SESSION['cart'][$id] = $qty;
-	
-	echo "<pre>";
-	print_r($_SESSION);
-	echo "</pre>";
-
+	$_SESSION['cart'][$id] = $qty;		
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,8 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<div class="inner-sec-shop pt-lg-4 pt-3">
 					<div class="row">
-						<?php
-						
+						<?php						
 							$product =  SelectProductById($id);					
 						 ?>
 							<div class="col-lg-4 single-right-left ">
@@ -100,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-lg-8 single-right-left simpleCart_shelfItem">
 									<h3><?php echo $product['ten_sp'] ?></h3>
 									<p><span class="item_price"><?php echo number_format($product['gia']) ?></span>
-										<del>7,199,000</del>
+										<del>17,199,000</del>
 									</p>
 									<div class="rating1">
 										<ul class="stars">
@@ -116,8 +105,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<div class="color-quality-right">
 											<h5>Number :</h5>
 											<select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-													<option value="null">5 Qty</option>
-																		
+													<option value="null">5 Qty</option>																
 												</select>
 										</div>
 									</div>
@@ -125,23 +113,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="occasion-cart">
 											<div class="googles single-item singlepage">
 													<form action="single.php?id=<?php echo $id ?>" method="post">
-														<input type="hidden" name="id_sanpham" value="<?php echo $product['id_sp'] ?>">
-													
-																												
+														<input type="hidden" name="id_sanpham" value="<?php echo $product['id_sp'] ?>">												
 															<button type="submit" class="googles-cart pgoogles-cart">
 																ADD TO CART
 															</button>
-
-															<a href = "checkout.php" style="background-color:#1d1d1d; display:inline-block" class="googles-cart pgoogles-cart" > Shopping </a>
-														
-															
-																					
-													</form>
-													
+															<a href = "checkout.php" style="background-color:#1d1d1d; display:inline-block" class="googles-cart pgoogles-cart" > Shopping </a>										
+													</form>													
 												</div>
 									</div>
-
-
 									<ul class="footer-social text-left mt-lg-4 mt-3">
 											<li>Share On : </li>
 											<li class="mx-2">
