@@ -3,7 +3,7 @@ session_start();
 // PDO : php data ojects
 try
 {
-	$conn = new PDO('mysql:host=localhost;dbname=db;charset=utf8', 'root', '');
+	$conn = new PDO('mysql:host=localhost;dbname=db1;charset=utf8', 'root', '');
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 	

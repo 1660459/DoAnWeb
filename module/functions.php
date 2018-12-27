@@ -144,13 +144,10 @@
 
     function SelectSoLuongSP($id_sanpham)
     {
-        global $conn;
-  
+        global $conn; 
         $stmt = $conn->prepare("SELECT `so_luong` from sanpham as `sp` WHERE `sp`.id_sp =  ?   LIMIT 1");
-
         $stmt->execute(array($id_sanpham));
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
         return $result;
     }
 

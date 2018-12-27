@@ -185,7 +185,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h3 class="tittle-w3layouts my-lg-4 my-4">Best Seller </h3>
 
 				<?php 
-					$products = NewArrivals();			
+					$products = BestSeller();			
 				 ?>		
 				
                 <!--/slide-->

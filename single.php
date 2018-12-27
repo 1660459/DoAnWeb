@@ -149,12 +149,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												</a>
 											</li>
 											
-										</ul>
-			
+										</ul>			
 								</div>
 								<div class="clearfix"> </div>
 								<!--/tabs-->
-
 					<div class="container-fluid">
 					<!--/slide-->
 					<div class="slider-img mid-sec mt-lg-5 mt-2 px-lg-5 px-3">
@@ -166,9 +164,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<?php
 
 							$id_loai = $product['DanhMuc_idDanhMuc'];
-
-							$product_same_type =  Select5Type($id_loai);
-	
+							$product_same_type =  Select5Type($id_loai);	
 						 	?>
 							 <?php foreach ($product_same_type as  $value): ?>
 
