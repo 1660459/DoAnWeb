@@ -27,14 +27,10 @@
 
 				echo '<script> alert("Dat hang thanh cong") </script>';
 			 }	
-		
-
 		}else{
 			header('Location: login.php');
 		}
-
-	} 
-						
+	} 						
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -90,24 +86,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--checkout-->
 	<?php 	
 	
-
 	?>
-
 	<section class="banner-bottom-wthreelayouts py-lg-5 py-3">
 		<div class="container">
 			<div class="inner-sec-shop px-lg-4 px-3">
 				<h3 class="tittle-w3layouts my-lg-4 mt-3">Checkout </h3>
-
-
 				<div class="checkout-right">
 					<h4>Your shopping cart contains:
 						<span> </span>
 					</h4>
-
 				<?php 					
 					$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : "";
-				?>
-					
+				?>					
 					<table class="timetable_sub">
 						<thead>
 							<tr>
@@ -119,8 +109,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<th>Remove</th>
 							</tr>
 						</thead>
-						<tbody>
-							
+						<tbody>							
 							<form action="" method="post">
 							<?php $stt = 0 ?>
 							<?php $total_price = 0; ?>
@@ -129,13 +118,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									
 							   <?php $product = SelectProductCart($key); ?>
 								<?php 
-									
-									
 									if(isset($_POST['update-cart']))
 									{
 										$_SESSION['cart'][$product['id_sp']] = $_POST[$product['id_sp']];										
 									}
-									
+
 								$price = $_SESSION['cart'][$product['id_sp']] * $product['gia'];
 								 $total_price = $total_price + $price 
 								?>

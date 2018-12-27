@@ -44,7 +44,7 @@
     <td><?php echo $dong['ten_danhmuc'] ?></td>
     <td><?php echo $dong['ten_NSX'] ?></td>
     <td><?php $sql_tinhtrang = "select tinh_trang from sanpham";
-    
+
 	$row_tinhtrang = mysqli_query($conn, $sql_tinhtrang);
 	$dong_tinhtrang=mysqli_fetch_array($row_tinhtrang);
 	if($dong_tinhtrang['tinh_trang'] == 1 ){
@@ -53,8 +53,8 @@
 		echo 'Hết hàng';
 	}
     ?></td>
-    <td><a href="index.php?quanly=sanpham&ac=sua&id=<?php echo $dong['id_sp'] ?>" ><center><img src="../imgs/edit.png" width="30" height="30" /></center></a></td>
-    <td><a href="modules/quanlysanpham/xuly.php?id=<?php echo $dong['id_sp']?>" class="delete_link"><center><img src="/../../../img/X.png" width="30" height="30"   /></center></a></td>
+    <td><a href="index.php?quanly=sanpham&ac=sua&id=<?php echo $dong['id_sp'] ?>" >Edit</a></td>
+    <td><a href="modules/quanlysanpham/xuly.php?id=<?php echo $dong['id_sp']?>" class="delete_link">Del</a></td>
   </tr>
   <?php
   $i++;

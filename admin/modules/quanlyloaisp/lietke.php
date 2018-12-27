@@ -17,8 +17,8 @@
   <tr>
     <td><?php  echo $i;?></td>
     <td><?php echo $dong['ten_danhmuc'] ?></td>
-    <td><a href="index.php?quanly=loaisp&ac=sua&id=<?php echo $dong['idDanhMuc'] ?>"><center><img src="../imgs/edit.png" width="30" height="30" /></center></a></td>
-    <td><a href="modules/quanlyloaisp/xuly.php?id=<?php echo $dong['idDanhMuc']?>" class="delete_link"><center><img src="../imgs/delete.png" width="30" height="30" /></center></a></td>
+    <td><a href="index.php?quanly=loaisp&ac=sua&id=<?php echo $dong['idDanhMuc'] ?>">Edit</a></td>
+    <td><a href="modules/quanlyloaisp/xuly.php?id=<?php echo $dong['idDanhMuc']?>" class="delete_link">Del</a></td>
   </tr>
   <?php
   $i++;

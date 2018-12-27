@@ -126,6 +126,7 @@
         return $products;
     }
 
+    //check out
     function InsertDonhang($tongtien, $id_nguoidung)
     {
         global $conn;
@@ -133,6 +134,7 @@
         $stmt->execute(array($tongtien, $id_nguoidung ));
         return $conn->lastInsertID();
     }
+    
 
     function InsertChiTietDonHang($so_luong, $gia, $id_dathang, $id_sanpham)
     {

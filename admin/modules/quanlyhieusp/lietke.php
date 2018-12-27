@@ -20,8 +20,8 @@
     <td><?php  echo $i;?></td>
     <td><?php echo $dong['ten_NSX'] ?></td>
     <td><?php echo $dong['noi_sx'] ?></td>    
-    <td><a href="index.php?quanly=hieusp&ac=sua&id=<?php echo $dong['idNSX'] ?>"><center><img src="/img/edit.png" width="30" height="30" /></center></a></td>
-    <td><a href="modules/quanlyhieusp/xuly.php?id=<?php echo $dong['idNSX']?>" class="delete_link"><center><img src="/../../../img/X.png" width="30" height="30" /></center></a></td>
+    <td><a href="index.php?quanly=hieusp&ac=sua&id=<?php echo $dong['idNSX'] ?>">Edit</a></td>
+    <td><a href="modules/quanlyhieusp/xuly.php?id=<?php echo $dong['idNSX']?>" class="delete_link">Del</a></td>
   </tr>
   <?php
   $i++;
