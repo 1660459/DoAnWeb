@@ -125,7 +125,45 @@
 	    $products = $stmt->fetch(PDO::FETCH_ASSOC);
         return $products;
     }
-    
+
+    function InsertDonhang($tongtien, $id_nguoidung)
+    {
+        global $conn;
+        $stmt = $conn->prepare("insert into dathang(tong_gia, NguoiDung_idNguoiDung) VALUES(?, ?) ");
+        $stmt->execute(array($tongtien, $id_nguoidung ));
+        return $conn->lastInsertID();
+    }
+
+    function InsertChiTietDonHang($so_luong, $gia, $id_dathang, $id_sanpham)
+    {
+        global $conn;
+        $stmt = $conn-> prepare("insert into chitietdathang(so_luong,GIA,Thanhtien,DatHang_idDatHang,SanPham_id_sp) VALUES(?, ?, $so_luong * $gia, ?, ?)");
+        $stmt->execute(array($so_luong, $gia, $id_dathang, $id_sanpham));
+	
+    }
+
+    function SelectSoLuongSP($id_sanpham)
+    {
+        global $conn;
+  
+        $stmt = $conn->prepare("SELECT `so_luong` from sanpham as `sp` WHERE `sp`.id_sp =  ?   LIMIT 1");
+
+        $stmt->execute(array($id_sanpham));
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+    function UpdateSanPham($so_luong, $id_sanpham)
+    {
+        global $conn;
+
+        $stmt = $conn->prepare("UPDATE sanpham as `sp` SET `so_luong` = ?  WHERE `sp`.id_sp = ? ") ;
+
+        $stmt->execute(array($so_luong, $id_sanpham));
+    }
+
+
     function KiemTraPost($string){
         return isset($_POST[$string]) ? $_POST[$string] : '';
     }

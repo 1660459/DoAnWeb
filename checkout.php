@@ -1,6 +1,41 @@
 <?php require_once 'dataProvider.php'; ?>
 <?php require_once 'module/functions.php'; ?>
+<?php
+							
+	if(isset($_POST['payment']) && !empty($_SESSION['cart']) )
+	{
+		if(isset($_SESSION['user_id']))
+		{		
+			$user_id = $_POST['user_id'];
+			$total_price = $_POST['total_price'];
+			$id_hoadon = InsertDonhang($total_price, $user_id);
 
+			$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : "" ;
+
+			 foreach($cart as $key => $value)
+			 {
+				$product = SelectProductCart($key);
+
+				$so_luong = SelectSoLuongSP($product['id_sp']);
+				
+				$update_soluong = $so_luong['so_luong'] - $cart[$product['id_sp']];
+				UpdateSanPham($update_soluong, $key);
+
+				InsertChiTietDonHang($cart[$product['id_sp']], $product['gia'], $id_hoadon, $key );
+
+				unset($_SESSION['cart']);
+
+				echo '<script> alert("Dat hang thanh cong") </script>';
+			 }	
+		
+
+		}else{
+			header('Location: login.php');
+		}
+
+	} 
+						
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -34,7 +69,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
 
-<?php if(isset($_SESSION['user_id'])): ?>
      <?php include 'module/header.php'?>   
      <!-- banner -->
 		<div class="banner_inner">
@@ -54,17 +88,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!--//banner -->
 	<!--checkout-->
+	<?php 	
+	
+
+	?>
+
 	<section class="banner-bottom-wthreelayouts py-lg-5 py-3">
 		<div class="container">
 			<div class="inner-sec-shop px-lg-4 px-3">
 				<h3 class="tittle-w3layouts my-lg-4 mt-3">Checkout </h3>
+
+
 				<div class="checkout-right">
 					<h4>Your shopping cart contains:
 						<span> </span>
 					</h4>
-					<?php 					
-					$cart = $_SESSION['cart'];
-					?>
+
+				<?php 					
+					$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : "";
+				?>
+					
 					<table class="timetable_sub">
 						<thead>
 							<tr>
@@ -77,10 +120,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</tr>
 						</thead>
 						<tbody>
+							
+							<form action="" method="post">
 							<?php $stt = 0 ?>
+							<?php $total_price = 0; ?>
+						<?php if(!empty($cart)): ?>
 							<?php foreach($cart as $key => $value):  ?>
-
+									
 							   <?php $product = SelectProductCart($key); ?>
+								<?php 
+									
+									
+									if(isset($_POST['update-cart']))
+									{
+										$_SESSION['cart'][$product['id_sp']] = $_POST[$product['id_sp']];
+															
+									}
+								$price = $_SESSION['cart'][$product['id_sp']] * $product['gia'];
+								 $total_price = $total_price + $price 
+								?>
 							  	<?php $stt++ ?>
 								<tr class="rem1">
 									<td class="invert"><?php echo $stt ?></php></td>
@@ -94,14 +152,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<div class="quantity-select">
 												<div class="entry value-minus">&nbsp;</div>
 												<div class="entry value">
-													<span><?php echo $cart[$key]; ?></span>
+												 <input name="<?php echo $product['id_sp'] ?>" style="width: 39px; border: none;background: transparent;text-align: center;" 
+												 type="number" value="<?php echo $_SESSION['cart'][$product['id_sp']]; ?>"/>
 												</div>
 												<div class="entry value-plus active">&nbsp;</div>
 											</div>
 										</div>
 									</td>
 									<td class="invert"><?php echo $product['ten_sp'] ?> </td>
-									<td class="invert"><?php echo $product['gia'] ?></td>
+									<td class="invert"><?php echo number_format($product['gia']  * $_SESSION['cart'][$product['id_sp']]); ?></td>
 									<td class="invert">
 										<div class="rem">
 											<div class="close1"> </div>
@@ -109,27 +168,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 									</td>
 								</tr>
-							<?php endforeach ?>
+								<?php endforeach ?>
+							<?php endif ?>
+								<input type="submit" name="update-cart" value="Cap nhat gio hang">
+
+								</form>				
+										
 						</tbody>
 					</table>
+				
+					
 				</div>
+
 				<div class="checkout-left row">
 					<div class="col-md-4 checkout-left-basket">
 						<h4>Continue to basket</h4>
 						<ul>
-							<li>Product1
+							
+						<li>Total Price
 								<i>-</i>
-								<span>$281.00 </span>
-							</li>							
-							<li>Total
-								<i>-</i>
-								<span>$986.00</span>
-							</li>
+							<span><?php echo number_format($total_price); ?></span>
+						</li>
+				
+						<form action = "checkout.php" method="post">
+							<input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>" />
+							<input type="hidden" name="total_price" value="<?php echo $total_price; ?>" />
+							<input type="submit"  name="payment" class="btn btn-sm animated-button gibson-three mt-4" value="Payment"> 			
+						</form>
 						</ul>
-					</div>
+				</div>
+
 					<br>
 					<p>
-						<a href="shop.php" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
+						
 					</p>
 					</br>
 					<div class="clearfix"> </div>
@@ -147,6 +218,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="js/jquery-2.2.3.min.js"></script>
 	<!-- newsletter modal -->
 	<!--search jQuery-->
+
+
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<script src="js/classie-search.js"></script>
 	<script src="js/demo1-search.js"></script>
@@ -209,16 +282,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!--quantity-->
 	<script>
-		$('.value-plus').on('click', function () {
-			var divUpd = $(this).parent().find('.value'),
-				newVal = parseInt(divUpd.text(), 10) + 1;
-			divUpd.text(newVal);
+		 $('.value-plus').on('click', function (e) {
+		var inputQty = $(this).parent().find('.value').find('input')[0];
+			var newVal = parseInt(inputQty.value, 10) + 1;
+			inputQty.value = newVal;
 		});
-
-		$('.value-minus').on('click', function () {
-			var divUpd = $(this).parent().find('.value'),
-				newVal = parseInt(divUpd.text(), 10) - 1;
-			if (newVal >= 1) divUpd.text(newVal);
+		$('.value-minus').on('click', function (e) {
+		var inputQty = $(this).parent().find('.value').find('input')[0];
+			var newVal = parseInt(inputQty.value, 10) - 1;
+			if (newVal >= 1) inputQty.value = newVal;
 		});
 	</script>
 	<!--quantity-->
@@ -294,13 +366,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<script src="js/bootstrap.js"></script>
 	<!-- js file -->
-	<?php else:
-   header('Location: login.php');
-?>
 
-<?php
-    endif
-?>
 
 </body>
 </html>
