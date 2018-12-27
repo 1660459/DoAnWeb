@@ -200,7 +200,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<div class="product-googles-info slide-img googles">
 											<div class="men-pro-item">
 												<div class="men-thumb-item">
-													<img src="<?php echo $value['hinh_anh'] ?>" class="img-fluid" alt="">
+													<img src="<?php echo $value['hinh_anh'] ?>" class="img-fluid" alt="" width="302" height="287">
 													<div class="men-cart-pro">
 														<div class="inner-men-cart-pro">
 															<a href="single.php?id=<?php echo $value['id_sp'] ?>" class="link-product-add-cart">Quick View</a>
@@ -213,7 +213,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 														<div class="grid_meta">
 															<div class="product_price">
 																<h4>
-																	<a href="single.html"> <?php echo $value['ten_sp'] ?></a>
+																	<a href="single.php"> <?php echo $value['ten_sp'] ?></a>
 																</h4>
 																<div class="grid-price mt-2">
 																	<span class="money "><?php echo $value['gia'] ?></span>

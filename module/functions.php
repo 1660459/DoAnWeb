@@ -20,7 +20,7 @@
     function BestSeller()
     {
         global $conn;
-        $stmt = $conn-> prepare("SELECT * FROM chitietdathang as `ctdh`  ORDER BY `ctdh`.`so_luong` DESC  LIMIT 0 , 10");
+        $stmt = $conn-> prepare("SELECT * FROM sanpham, chitietdathang  as `ctdh`  ORDER BY `ctdh`.`so_luong` DESC  LIMIT 0 , 10");
         $stmt->execute();
 	    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	    return $products;
