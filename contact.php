@@ -92,7 +92,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="col-md-9 address-right text-left">
 								<h6>Phone</h6>
-								<p>+1 234 567 8901</p>
+								<p>+078 347 8386</p>
 
 							</div>
 

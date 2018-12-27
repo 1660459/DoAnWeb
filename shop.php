@@ -253,7 +253,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 															<a href="single.php?id=<?php echo $value['id_sp'] ?>" class="link-product-add-cart">Quick View</a>
 														</div>
 													</div>
-													<span class="product-new-top">New</span>
+												
 												</div>
 												<div class="item-info-product">
 
@@ -306,7 +306,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 															<form action="single.php?id=<?php echo $id ?>" method="post">
 															<input type="hidden" name="id_sanpham" value="<?php echo $product['id_sp'] ?>">	
 																<button type="submit" class="googles-cart pgoogles-cart">
-																	<i class="fas fa-cart-plus"></i>
+																	
 																	<a href = "checkout.php" > </a>
 																</button>
 															</form>		
@@ -341,10 +341,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 														<img src="images/s5.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
-																<a href="single.html" class="link-product-add-cart">Quick View</a>
+																<a href="single.php" class="link-product-add-cart">Quick View</a>
 															</div>
 														</div>
-														<span class="product-new-top">New</span>
+														
 													</div>
 													<div class="item-info-product">
 	
@@ -385,20 +385,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																		</a>
 																	</li>
 																</ul>
-															</div>
-															<div class="googles single-item hvr-outline-out">
-																<form action="#" method="post">
-																	<input type="hidden" name="cmd" value="_cart">
-																	<input type="hidden" name="add" value="1">
-																	<input type="hidden" name="googles_item" value="Fastrack Aviator">
-																	<input type="hidden" name="amount" value="325.00">
-																	<button type="submit" class="googles-cart pgoogles-cart">
-																		<i class="fas fa-cart-plus"></i>
-																	</button>
-
-																</form>
-	
-															</div>
+															</div>														
 														</div>
 	
 													</div>
@@ -419,7 +406,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																<a href="single.html" class="link-product-add-cart">Quick View</a>
 															</div>
 														</div>
-														<span class="product-new-top">New</span>
+														
 													</div>
 													<div class="item-info-product">
 	
@@ -461,18 +448,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																	</li>
 																</ul>
 															</div>
-															<div class="googles single-item hvr-outline-out">
-																<form action="#" method="post">
-																	<input type="hidden" name="cmd" value="_cart">
-																	<input type="hidden" name="add" value="1">
-																	<input type="hidden" name="googles_item" value="MARTIN Aviator">
-																	<input type="hidden" name="amount" value="425.00">
-																	<button type="submit" class="googles-cart pgoogles-cart">
-																		<i class="fas fa-cart-plus"></i>
-																	</button>
-																</form>
-	
-															</div>
+														
 														</div>
 	
 													</div>
@@ -493,7 +469,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																<a href="single.html" class="link-product-add-cart">Quick View</a>
 															</div>
 														</div>
-														<span class="product-new-top">New</span>
+													
 													</div>
 													<div class="item-info-product">
 	
@@ -535,18 +511,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																	</li>
 																</ul>
 															</div>
-															<div class="googles single-item hvr-outline-out">
-																<form action="#" method="post">
-																	<input type="hidden" name="cmd" value="_cart">
-																	<input type="hidden" name="add" value="1">
-																	<input type="hidden" name="googles_item" value="Royal Son Aviator">
-																	<input type="hidden" name="amount" value="425.00">
-																	<button type="submit" class="googles-cart pgoogles-cart">
-																		<i class="fas fa-cart-plus"></i>
-																	</button>
-																</form>
-	
-															</div>
+														
 														</div>
 	
 													</div>
@@ -567,7 +532,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																<a href="single.html" class="link-product-add-cart">Quick View</a>
 															</div>
 														</div>
-														<span class="product-new-top">New</span>
+														
 													</div>
 													<div class="item-info-product">
 	
@@ -609,18 +574,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																	</li>
 																</ul>
 															</div>
-															<div class="googles single-item hvr-outline-out">
-																<form action="#" method="post">
-																	<input type="hidden" name="cmd" value="_cart">
-																	<input type="hidden" name="add" value="1">
-																	<input type="hidden" name="googles_item" value="Irayz Butterfly">
-																	<input type="hidden" name="amount" value="281.00">
-																	<button type="submit" class="googles-cart pgoogles-cart">
-																		<i class="fas fa-cart-plus"></i>
-																	</button>
-																</form>
-	
-															</div>
+														
 														</div>
 	
 													</div>
@@ -641,7 +595,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																<a href="single.html" class="link-product-add-cart">Quick View</a>
 															</div>
 														</div>
-														<span class="product-new-top">New</span>
+													
 													</div>
 													<div class="item-info-product">
 	
@@ -682,19 +636,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																		</a>
 																	</li>
 																</ul>
-															</div>
-															<div class="googles single-item hvr-outline-out">
-																<form action="#" method="post">
-																	<input type="hidden" name="cmd" value="_cart">
-																	<input type="hidden" name="add" value="1">
-																	<input type="hidden" name="googles_item" value="Jerry Rectangular ">
-																	<input type="hidden" name="amount" value="525.00">
-																	<button type="submit" class="googles-cart pgoogles-cart">
-																		<i class="fas fa-cart-plus"></i>
-																	</button>
-																</form>
-	
-															</div>
+															</div>														
 														</div>
 	
 													</div>
@@ -715,7 +657,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																<a href="single.html" class="link-product-add-cart">Quick View</a>
 															</div>
 														</div>
-														<span class="product-new-top">New</span>
+													
 													</div>
 													<div class="item-info-product">
 	
@@ -757,18 +699,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																	</li>
 																</ul>
 															</div>
-															<div class="googles single-item hvr-outline-out">
-																<form action="#" method="post">
-																	<input type="hidden" name="cmd" value="_cart">
-																	<input type="hidden" name="add" value="1">
-																	<input type="hidden" name="googles_item" value="Herdy Wayfarer">
-																	<input type="hidden" name="amount" value="325.00">
-																	<button type="submit" class="googles-cart pgoogles-cart">
-																		<i class="fas fa-cart-plus"></i>
-																	</button>
-																</form>
-	
-															</div>
+														
 														</div>
 	
 													</div>
@@ -906,15 +837,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
     <script>
         $(document).ready(function() {
-            /*
-            						var defaults = {
-            							  containerID: 'toTop', // fading element id
-            							containerHoverID: 'toTopHover', // fading element hover id
-            							scrollSpeed: 1200,
-            							easingType: 'linear' 
-            						 };
-            						*/
-
+          //hover
             $().UItoTop({
                 easingType: 'easeOutQuart'
             });
